@@ -1,5 +1,5 @@
 {% set name = "wagtail-pdf" %}
-{% set version = "0.2.1" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/donhauser/wagtail-pdf/archive/{{ version }}.tar.gz
-  sha256: ed1e04e004c39d9cddd9d2b6205231bb99d6902324aa34581766890bff520c5e
+  sha256: f87fff035cbf88c600bb2947096b24e35a9ba5640d9c210bd38a1dfabd45857d
 
 build:
   noarch: python
@@ -32,7 +32,7 @@ test:
 
 about:
   home: https://github.com/donhauser/wagtail-pdf
-  summary: PDF rendering views for the Wagtail CMS 
+  summary: PDF rendering views for the Wagtail CMS
   license: Apache-2.0
   license_file:
     - LICENSE
