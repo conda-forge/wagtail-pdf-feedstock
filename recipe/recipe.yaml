@@ -3,17 +3,18 @@ context:
   version: 1.0.0
 
 package:
-  name: ${{ name|lower }}
+  name: wagtail-pdf-view
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/wagtail_pdf_view-${{ version }}.tar.gz
+  url: https://pypi.io/packages/source/w/wagtail-pdf-view/wagtail_pdf_view-${{ version }}.tar.gz
   sha256: 0b4dff65eeb6f76155b050b8feffa81500a49b4b98821aa07ae14b5ef68c1a49
 
 build:
-  number: 1
-  noarch: python
-  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  noarch: python 
+  script:
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
   host:
@@ -29,6 +30,7 @@ tests:
   - python:
       imports:
         - wagtail_pdf_view
+      pip_check: true
   - requirements:
       run:
         - pip
@@ -42,7 +44,11 @@ about:
     - LICENSE
     - wagtail_pdf_view/static/pdf.js/LICENSE
     - wagtail_pdf_view/static/pdf.js/web/cmaps/LICENSE
+  description: |
+     Render Wagtail pages and models as PDF document using weasyprint.
   homepage: https://github.com/donhauser/wagtail-pdf
+  repository: https://github.com/donhauser/wagtail-pdf
+  documentation: https://github.com/donhauser/wagtail-pdf/blob/main/README.md
 
 extra:
   recipe-maintainers:
