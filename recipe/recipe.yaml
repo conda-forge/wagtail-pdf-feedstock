@@ -1,5 +1,3 @@
-schema_version: 1
-
 context:
   name: wagtail-pdf-view
   version: 1.0.0
